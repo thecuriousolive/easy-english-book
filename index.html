@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Easy English Starter Kit — Korea Edition | Olivia Patterson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Pompiere&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #fbf6ee;
+        --bg-soft: #f5ecdd;
+        --surface: #fffdf9;
+        --ink: #2f2a24;
+        --muted: #6f6355;
+        --line: #e7dac6;
+        --rose: #b8435a;
+        --rose-deep: #9c3549;
+        --rose-soft: #f8e0da;
+        --sky: #4d779e;
+        --sky-soft: #dfeaf3;
+        --gold: #9a7410;
+        --gold-bright: #e8a90c;
+        --sage: #5f7350;
+        --sage-soft: #e6ecdc;
+        --shadow: 0 18px 40px rgba(84, 55, 30, 0.16);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #211b1d;
+          --bg-soft: #2a2226;
+          --surface: #2e262a;
+          --ink: #f4ebe1;
+          --muted: #c9b6a9;
+          --line: #4a3d42;
+          --rose: #eda0ae;
+          --rose-deep: #f2b7c1;
+          --rose-soft: #453036;
+          --sky: #a5c6e2;
+          --sky-soft: #2c3a47;
+          --gold: #eec25e;
+          --gold-bright: #f0b93a;
+          --sage: #b3c69c;
+          --sage-soft: #333d2c;
+          --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; animation: none !important; }
+      }
+      body {
+        margin: 0; background: var(--bg); color: var(--ink);
+        font-family: "Nunito", system-ui, sans-serif; font-size: 1.05rem; line-height: 1.6;
+      }
+      img { max-width: 100%; display: block; }
+      button, a.btn { min-height: 2.75rem; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+      h1, h2, h3 { font-family: "Baloo 2", "Nunito", sans-serif; line-height: 1.15; margin: 0; }
+      h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 800; }
+      h3 { font-size: 1.25rem; font-weight: 700; }
+      .section { padding: 56px 0 8px; }
+      .section-head { max-width: 660px; margin-bottom: 26px; }
+      .section-head p { color: var(--muted); margin: 10px 0 0; }
+      .kicker {
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.85rem;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin: 0 0 8px;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero { padding: 44px 0 30px; }
+      .hero-grid { display: grid; gap: 34px; align-items: center; }
+      @media (min-width: 820px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
+      .hero h1 { font-size: clamp(2.4rem, 7vw, 3.9rem); font-weight: 800; }
+      .hero h1 .accent { color: var(--rose); }
+      .level-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--rose); color: #fff; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.02em; padding: 7px 14px; border-radius: 999px; margin: 14px 0 0; box-shadow: 0 6px 16px rgba(156,53,73,0.22); }
+      @media (prefers-color-scheme: dark) { .level-badge { color: #221016; } }
+      .level-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: 0.9; }
+      .hero .tagline { font-family: "Baloo 2", sans-serif; font-size: clamp(1.15rem, 3vw, 1.45rem); font-weight: 600; color: var(--sky); margin: 12px 0 0; }
+      .hero .lede { color: var(--muted); margin: 14px 0 0; max-width: 34rem; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+      .chips li { font-weight: 800; font-size: 0.85rem; padding: 7px 13px; border-radius: 999px; background: var(--surface); border: 1.5px solid var(--line); }
+      .chips li.rose { background: var(--rose-soft); border-color: transparent; color: var(--rose-deep); }
+      .chips li.sky { background: var(--sky-soft); border-color: transparent; color: var(--sky); }
+      .chips li.sage { background: var(--sage-soft); border-color: transparent; color: var(--sage); }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px;
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none;
+        border: 2px solid transparent; cursor: pointer;
+      }
+      .btn-primary { background: var(--rose); color: #fff; }
+      @media (prefers-color-scheme: dark) { .btn-primary { color: #2a1218; } }
+      .btn-primary:hover { background: var(--rose-deep); }
+      @media (prefers-color-scheme: dark) { .btn-primary:hover { background: var(--rose); color: #2a1218; filter: brightness(1.08); } }
+      .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+      .btn-ghost:hover { border-color: var(--rose); color: var(--rose); }
+      .cover-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); transform: rotate(1.2deg); max-width: 420px; margin: 0 auto; width: 100%; }
+
+      /* ---------- Olivia's voice — welcome ---------- */
+      .voice-card { margin-top: 24px; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 20px 22px; max-width: 34rem; }
+      .voice-label { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--rose); margin: 0 0 4px; }
+      .voice-card h3 { font-size: 1.3rem; margin: 0 0 8px; }
+      .voice-transcript { color: var(--muted); font-style: italic; margin: 0; font-size: 0.98rem; }
+      .voice-takes { display: grid; gap: 14px; margin-top: 16px; }
+      .voice-take span { display: block; font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 5px; }
+      .voice-take audio { width: 100%; height: 44px; display: block; }
+      .voice-note { color: var(--muted); font-size: 0.9rem; margin: 14px 0 0; }
+      .voice-note strong { color: var(--ink); }
+
+      /* ---------- What's inside ---------- */
+      .sections-list { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--line); }
+      .sections-list > li { display: grid; grid-template-columns: 52px 1fr; gap: 6px 16px; padding: 22px 4px; border-bottom: 1.5px solid var(--line); align-items: start; }
+      @media (min-width: 700px) { .sections-list > li { grid-template-columns: 64px 250px 1fr; gap: 6px 22px; } }
+      .sec-num { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.9rem; color: var(--gold-bright); line-height: 1; padding-top: 2px; }
+      .sec-name { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 1.2rem; line-height: 1.25; }
+      .sec-name .count { display: block; font-size: 0.85rem; color: var(--rose); font-weight: 700; margin-top: 3px; }
+      .sec-detail { color: var(--muted); grid-column: 2; margin: 0; }
+      @media (min-width: 700px) { .sec-detail { grid-column: 3; } }
+      .topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding: 0; list-style: none; }
+      .topics li { font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--bg-soft); color: var(--ink); }
+
+      /* ---------- Vocabulary explorer ---------- */
+      .theme-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+      .theme-tab {
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.95rem; padding: 8px 16px;
+        border-radius: 999px; border: 2px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer;
+      }
+      .theme-tab:hover { border-color: var(--sky); color: var(--sky); }
+      .theme-tab[aria-pressed="true"] { background: var(--sky); border-color: var(--sky); color: #fff; }
+      @media (prefers-color-scheme: dark) { .theme-tab[aria-pressed="true"] { color: #12222f; } }
+      .theme-tab:focus-visible, .nav-btn:focus-visible, .btn:focus-visible, .thumb:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 2px; }
+      .cards { display: grid; gap: 16px; grid-template-columns: 1fr; }
+      @media (min-width: 560px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 900px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+      .flash { perspective: 900px; }
+      .flash-inner {
+        position: relative; width: 100%; min-height: 218px; cursor: pointer; transform-style: preserve-3d;
+        transition: transform 0.55s ease; display: block;
+      }
+      .flash.flipped .flash-inner { transform: rotateY(180deg); }
+      .face {
+        position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+        border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; border: 1.5px solid var(--line);
+      }
+      .face-front { background: var(--sky-soft); justify-content: center; }
+      .face-back { background: var(--surface); transform: rotateY(180deg); }
+      .face .cat { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky); }
+      .face-back .cat { color: var(--rose); }
+      .face .word { font-family: "Baloo 2", sans-serif; font-size: 1.9rem; font-weight: 800; margin: 6px 0 2px; }
+      .face .hint { color: var(--muted); font-size: 0.88rem; margin-top: auto; font-weight: 700; }
+      .face .kr { font-size: 1.3rem; font-weight: 800; margin: 4px 0; }
+      .face .example { font-style: italic; margin: 4px 0; font-size: 0.98rem; }
+      .face .ipa { color: var(--muted); font-weight: 700; font-size: 0.92rem; }
+      .listen {
+        margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+        background: var(--rose); color: #fff; border: none; border-radius: 999px;
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.9rem; padding: 8px 16px; cursor: pointer; min-height: 2.5rem;
+      }
+      @media (prefers-color-scheme: dark) { .listen { color: #2a1218; } }
+
+      /* ---------- Look inside ---------- */
+      .viewer { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+      .viewer-stage { display: grid; gap: 16px; }
+      @media (min-width: 820px) { .viewer-stage { grid-template-columns: 340px 1fr; align-items: start; } }
+      .viewer-img { border-radius: 12px; border: 1px solid var(--line); width: 100%; }
+      .viewer-caption { font-size: 1.15rem; font-weight: 700; font-family: "Baloo 2", sans-serif; margin: 4px 0 6px; }
+      .viewer-note { color: var(--muted); margin: 0; }
+      .viewer-nav { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+      .nav-btn {
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.95rem; padding: 8px 18px;
+        border-radius: 999px; border: 2px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer;
+      }
+      .nav-btn:hover { border-color: var(--rose); color: var(--rose); }
+      .thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+      .thumb { width: 62px; height: 78px; padding: 0; border-radius: 10px; overflow: hidden; border: 3px solid var(--line); background: var(--bg); cursor: pointer; flex: 0 0 auto; }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+      .thumb[aria-pressed="true"] { border-color: var(--rose); }
+
+      /* ---------- Dialogues ---------- */
+      .dialogue-grid { display: grid; gap: 22px; }
+      @media (min-width: 820px) { .dialogue-grid { grid-template-columns: 0.9fr 1.1fr; align-items: start; } }
+      .chat { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 22px; }
+      .chat h3 { margin-bottom: 14px; }
+      .bubble { max-width: 85%; padding: 10px 14px; border-radius: 16px; margin-bottom: 10px; font-weight: 600; }
+      .bubble.a { background: var(--sky-soft); border-bottom-left-radius: 4px; }
+      .bubble.b { background: var(--rose-soft); border-bottom-right-radius: 4px; margin-left: auto; }
+      .bubble .who { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+      .dialogue-titles { columns: 2; column-gap: 28px; margin: 0; padding-left: 20px; color: var(--muted); }
+      .dialogue-titles li { margin-bottom: 7px; break-inside: avoid; }
+      .expressions { margin-top: 22px; background: var(--rose-soft); border-radius: var(--radius); padding: 22px; display: grid; gap: 14px; }
+      @media (min-width: 760px) { .expressions { grid-template-columns: 1fr 1fr; } }
+      .expressions h3 { grid-column: 1 / -1; }
+      .expressions .sub { grid-column: 1 / -1; color: var(--muted); margin: -6px 0 0; }
+      .expr { background: var(--surface); border-radius: 12px; padding: 14px 16px; }
+      .expr .from { font-weight: 800; font-size: 1.05rem; }
+      .expr .arrow { color: var(--rose); font-weight: 800; margin: 0 6px; }
+      .expr .to { font-family: "Baloo 2", sans-serif; font-weight: 700; color: var(--rose-deep); }
+      .expr.wrong .from { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; }
+      .expr.wrong .to { color: var(--sage); }
+
+      /* ---------- Pattern ---------- */
+      .pattern { display: grid; gap: 16px; }
+      @media (min-width: 760px) { .pattern { grid-template-columns: repeat(3, 1fr); } }
+      .step { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 22px; }
+      .step .step-num { font-family: "Baloo 2", sans-serif; font-weight: 800; color: var(--gold); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .step h3 { margin: 6px 0 8px; }
+      .step p { color: var(--muted); margin: 0; }
+
+      /* ---------- World ---------- */
+      .world { background: var(--bg-soft); border-radius: 26px; padding: 30px 22px; margin-top: 56px; }
+      @media (min-width: 820px) { .world { padding: 40px; } }
+      .world-grid { display: grid; gap: 26px; }
+      @media (min-width: 820px) { .world-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+      .world img.still { border-radius: var(--radius); box-shadow: var(--shadow); }
+      .flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 16px 0; padding: 0; list-style: none; }
+      .flow li { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.85rem; background: var(--surface); border: 1.5px solid var(--line); padding: 5px 11px; border-radius: 999px; }
+      .flow .sep { border: none; background: none; padding: 0; color: var(--rose); font-weight: 800; }
+      .episodes { list-style: none; margin: 14px 0 0; padding: 0; }
+      .episodes li { padding: 9px 0; border-bottom: 1.5px dashed var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+      .episodes li:last-child { border-bottom: none; }
+      .episodes .ep-name { font-weight: 800; }
+      .episodes .ep-teaches { color: var(--muted); font-size: 0.92rem; }
+      video { width: 100%; border-radius: var(--radius); background: #000; box-shadow: var(--shadow); }
+      .video-cap { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+
+      /* ---------- Listen & Watch ---------- */
+      .media-grid { display: grid; gap: 20px; }
+      @media (min-width: 860px) { .media-grid { grid-template-columns: 1.05fr 0.95fr; align-items: start; } }
+      .player-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 24px; }
+      .player-card h3 { margin-bottom: 6px; }
+      .player-card .sub { color: var(--muted); margin: 0 0 16px; font-size: 0.96rem; }
+      .play-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 6px; }
+      .play-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--rose); color: #fff; border: none; border-radius: 999px; font-family: "Baloo 2", sans-serif; font-weight: 700; padding: 10px 20px; cursor: pointer; }
+      @media (prefers-color-scheme: dark) { .play-btn { color: #221016; } }
+      .play-btn.secondary { background: var(--sky); }
+      .play-btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--line); }
+      .bubble.playing { outline: 3px solid var(--gold-bright); outline-offset: 2px; }
+      .bubble .listen-mini { margin-top: 8px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 0.8rem; font-weight: 800; cursor: pointer; font-family: "Baloo 2", sans-serif; }
+      .drill-list { display: grid; gap: 10px; margin-top: 14px; }
+      .drill { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--bg-soft); border-radius: 12px; padding: 12px 14px; }
+      .drill strong { display: block; font-size: 0.98rem; }
+      .drill span { color: var(--muted); font-size: 0.88rem; }
+      .drill button { flex: 0 0 auto; background: var(--ink); color: var(--bg); border: none; border-radius: 999px; padding: 7px 14px; font-family: "Baloo 2", sans-serif; font-weight: 700; cursor: pointer; font-size: 0.88rem; }
+      .drill { flex-wrap: wrap; }
+      .drill audio { flex: 1 1 210px; max-width: 320px; height: 40px; }
+      .batch-grid { display: grid; gap: 16px; margin-top: 16px; }
+      @media (min-width: 760px) { .batch-grid { grid-template-columns: 1fr 1fr; } }
+      .dlg-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+      .dlg-card h3 { font-size: 1.08rem; margin-bottom: 10px; }
+      .dlg-card .bubble { font-size: 0.95rem; padding: 8px 12px; margin-bottom: 8px; }
+      .dlg-card audio { width: 100%; height: 40px; display: block; margin-top: 10px; }
+      .dlg-card .dlg-note { color: var(--muted); font-size: 0.88rem; margin: 8px 0 0; }
+      .olivia-audio-label { display: block; font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.9rem; margin: 14px 0 5px; color: var(--rose-deep); }
+      .chat audio.olivia-audio, .player-card audio.olivia-audio { width: 100%; height: 44px; display: block; }
+      .qr-steps { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 12px; }
+      .qr-steps li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
+      .qr-steps .n { width: 36px; height: 36px; border-radius: 50%; background: var(--gold-bright); color: #2a2000; display: grid; place-items: center; font-family: "Baloo 2", sans-serif; font-weight: 800; }
+      .qr-steps p { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
+      .qr-box { margin-top: 18px; border: 2px dashed var(--line); border-radius: 14px; padding: 16px; background: var(--bg); display: grid; grid-template-columns: 84px 1fr; gap: 16px; align-items: center; }
+      .qr-fake { width: 84px; height: 84px; background: var(--ink); border-radius: 8px; display: grid; place-items: center; color: var(--bg); font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 0.7rem; text-align: center; line-height: 1.1; padding: 8px; }
+      .episode-grid { display: grid; gap: 14px; margin-top: 20px; }
+      @media (min-width: 640px) { .episode-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 900px) { .episode-grid { grid-template-columns: repeat(3, 1fr); } }
+      .ep-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; }
+      .ep-card.featured { border-color: var(--rose); background: var(--rose-soft); }
+      .ep-card .ep-tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); }
+      .ep-card h4 { font-family: "Baloo 2", sans-serif; margin: 6px 0 4px; font-size: 1.05rem; line-height: 1.25; }
+      .ep-card p { color: var(--muted); font-size: 0.92rem; margin: 0; flex: 1; }
+      .ep-card .ep-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+      .ep-card .ep-actions button, .ep-card .ep-actions a { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.88rem; border-radius: 999px; padding: 7px 14px; cursor: pointer; text-decoration: none; }
+      .ep-watch { background: var(--rose); color: #fff; border: none; }
+      @media (prefers-color-scheme: dark) { .ep-watch { color: #221016; } }
+      .ep-listen { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
+
+      /* ---------- About / next ---------- */
+      .two-col { display: grid; gap: 20px; }
+      @media (min-width: 820px) { .two-col { grid-template-columns: 1fr 1fr; } }
+      .panel { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 26px; }
+      .panel p { color: var(--muted); }
+      .panel p strong { color: var(--ink); }
+      .panel ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); }
+      .panel li { margin-bottom: 8px; }
+      .idea-tag { display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border: 1.5px solid var(--gold-bright); padding: 2px 9px; border-radius: 999px; margin-bottom: 10px; }
+      /* ---------- About the Author — book page ---------- */
+      .author-page {
+        max-width: 640px; margin: 0 auto; background: var(--surface);
+        border: 1.5px solid var(--line); border-radius: 26px; box-shadow: var(--shadow);
+        padding: 52px 34px 46px; text-align: center;
+      }
+      @media (max-width: 560px) { .author-page { padding: 42px 22px 38px; } }
+      .author-page h2 {
+        font-family: "Pompiere", "Baloo 2", cursive; font-weight: 400;
+        font-size: clamp(2.9rem, 9vw, 4.2rem); line-height: 1.05; letter-spacing: 0.01em;
+        color: var(--rose-deep); margin: 0;
+      }
+      .author-photo {
+        width: 196px; height: 196px; border-radius: 50%; object-fit: cover; object-position: center 22%;
+        margin: 30px auto 0; border: 5px solid var(--gold-bright);
+        box-shadow: 0 10px 26px rgba(84, 55, 30, 0.22);
+      }
+      .author-greeting {
+        font-family: "Pompiere", "Baloo 2", cursive; font-weight: 400;
+        font-size: clamp(1.9rem, 6vw, 2.5rem); line-height: 1.15; margin: 26px 0 0; color: var(--ink);
+      }
+      .author-bio {
+        font-family: "Noto Sans", "Nunito", sans-serif; font-size: 1.06rem; line-height: 1.75;
+        color: var(--ink); max-width: 30rem; margin: 18px auto 0;
+      }
+      .author-bio strong { color: var(--rose-deep); }
+      .author-kr {
+        font-family: "Noto Sans KR", "Noto Sans", sans-serif; font-size: 1rem; line-height: 1.7;
+        color: var(--muted); max-width: 30rem; margin: 18px auto 0;
+      }
+      .author-rule { width: 150px; border: none; border-top: 2px solid var(--gold-bright); margin: 30px auto 24px; }
+      .author-contacts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-family: "Noto Sans", "Nunito", sans-serif; font-size: 1.02rem; }
+      .author-contacts a { color: var(--rose-deep); font-weight: 700; text-decoration: none; }
+      .author-contacts a:hover { text-decoration: underline; }
+      .author-contacts .handle { font-weight: 700; }
+      .author-practice { margin: 28px auto 0; max-width: 30rem; background: var(--bg-soft); border-radius: 16px; padding: 22px 22px 20px; text-align: center; }
+      .author-practice h3 { font-family: "Baloo 2", sans-serif; font-size: 1.25rem; color: var(--rose-deep); margin: 0 0 6px; }
+      .author-practice p { font-family: "Noto Sans", "Nunito", sans-serif; font-size: 0.98rem; line-height: 1.6; color: var(--muted); margin: 0 0 14px; }
+      .author-practice ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-family: "Noto Sans", "Nunito", sans-serif; font-size: 1rem; line-height: 1.55; text-align: left; }
+      .author-practice li strong { color: var(--ink); display: block; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+      .author-practice a { color: var(--rose-deep); font-weight: 700; text-decoration: none; word-break: break-word; }
+      .author-practice a:hover { text-decoration: underline; }
+      .author-closing {
+        font-family: "Pompiere", "Baloo 2", cursive; font-weight: 400;
+        font-size: clamp(1.8rem, 5.5vw, 2.3rem); line-height: 1.2; color: var(--rose-deep); margin: 30px 0 0;
+      }
+      footer { padding: 48px 0 40px; margin-top: 56px; border-top: 1.5px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+      footer .closing { font-family: "Baloo 2", sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--ink); margin: 0 0 8px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- HERO -->
+      <header class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="kicker">Korea Edition · By Olivia Patterson</p>
+            <h1>Easy English <span class="accent">Starter Kit</span></h1>
+            <span class="level-badge"><span class="dot" aria-hidden="true"></span> Level: Beginner (A1–A2)</span>
+            <p class="tagline">Speak natural American English with confidence.</p>
+            <p class="lede">
+              A complete beginner-friendly system for <strong>Korean adults whose school English never became speaking confidence</strong> — 194 pages of
+              vocabulary cards, grammar cheat sheets, real dialogues, and pronunciation coaching,
+              all in simple English that never talks down to you. One idea per page, big and clear,
+              so starting feels easy. This is the Beginner (A1–A2) kit — the first step, with a next-level follow-up series planned for after it.
+            </p>
+            <ul class="chips">
+              <li class="rose">Beginner (A1–A2)</li>
+              <li class="rose">194 pages</li>
+              <li class="sky">7 sections</li>
+              <li>50 vocabulary cards · 10 themes</li>
+              <li class="sage">20 dialogues</li>
+              <li>30-day study planner</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#welcome-voice">▶ Hear Olivia's voice</a>
+              <a class="btn btn-ghost" href="#vocabulary">Try the vocabulary cards</a>
+              <a class="btn btn-ghost" href="#listen-watch">Listen &amp; Watch</a>
+              <a class="btn btn-ghost" href="#nina-pip">Nina &amp; Pip for kids</a>
+              <a class="btn btn-ghost" href="#author">About the Author</a>
+              <a class="btn btn-ghost" href="assets/starter-kit-sample-15-pages.pdf" download>Download the 15-page sample (PDF)</a>
+            </div>
+            <div class="voice-card" id="welcome-voice" aria-labelledby="voice-h">
+              <p class="voice-label">In Olivia's own voice</p>
+              <h3 id="voice-h">Hear Olivia welcome you</h3>
+              <p class="voice-transcript">“Hi, I'm Olivia. Welcome to the Easy English Starter Kit. This kit was made for Korean learners who studied English in school but never got to speak it. We start small, we practice out loud, and we build real confidence. Let's start!”</p>
+              <div class="voice-takes">
+                <div class="voice-take">
+                  <span>Welcome · 0:20</span>
+                  <audio controls preload="metadata" src="assets/welcome-take-2.mp3" aria-label="Olivia's welcome message"></audio>
+                </div>
+              </div>
+              <p class="voice-note"><strong>Olivia recorded this herself</strong> — this is her real voice, not a computer voice — and it doesn't stop at the welcome: all <strong>20 dialogues</strong> and eleven <strong>pronunciation drills</strong> are recorded in her voice too — find them in the dialogues section and the <a href="#listen-watch" style="color:var(--rose); font-weight:800;">Listen &amp; Watch</a> section below.</p>
+            </div>
+          </div>
+          <figure class="cover-frame" style="margin:0 auto;">
+            <img src="assets/cover.jpg" alt="Cover of the Easy English Starter Kit: the title over a soft pink and blue sky, with the words 'Speak natural American English with confidence' and 'A complete beginner-friendly system designed for Korean learners.'" />
+          </figure>
+        </div>
+      </header>
+
+      <!-- WHAT'S INSIDE -->
+      <section class="section" aria-labelledby="inside-h">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">What's included</p>
+            <h2 id="inside-h">Seven sections, each with one clear job</h2>
+            <p><strong>Beginner (A1–A2)</strong> · For Korean adults whose school English never became speaking confidence. Everything below comes from the complete kit itself — all 194 pages. The kit now opens with a publishing page and closes with an About the Author page. Every section was built around the exact places Korean learners get stuck, and almost every teaching page ends with practice and an answer page.</p>
+          </div>
+          <ol class="sections-list">
+            <li>
+              <span class="sec-num">1</span>
+              <div class="sec-name">Vocabulary Master Pack <span class="count">50 cards · 10 themes</span></div>
+              <div class="sec-detail">
+                <p style="margin:0;">Every card carries the English word, its Korean translation, an example sentence, a pronunciation guide, and a picture — organized by the themes of real life:</p>
+                <ul class="topics">
+                  <li>Daily Life</li><li>Work &amp; Office</li><li>Travel</li><li>Food &amp; Restaurants</li><li>Feelings</li>
+                  <li>Social Media</li><li>Shopping</li><li>School &amp; Study</li><li>Weather</li><li>Hobbies</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="sec-num">2</span>
+              <div class="sec-name">Grammar Cheat Sheets <span class="count">20 topics · with answer pages</span></div>
+              <div class="sec-detail">
+                <p style="margin:0;">Each sheet starts with why Korean learners struggle with that exact point, gives one clear fix, then practice — and the answers on the next page. The 20 topics:</p>
+                <ul class="topics">
+                  <li>Articles (a/an/the)</li><li>Past Tense Consistency</li><li>Present Perfect vs Past Simple</li><li>Natural Conversation Flow</li>
+                  <li>Prepositions (in/on/at)</li><li>Countable vs Uncountable Nouns</li><li>R/L Confusion</li><li>F/P Confusion</li>
+                  <li>TH Pronunciation</li><li>Sentence Stress Patterns</li><li>Polite vs Casual English</li><li>Linking Words (wanna/gonna/gotta)</li>
+                  <li>Plurals (s/es)</li><li>Subject-Verb Agreement</li><li>Word Order (S+V+O)</li><li>Adjective Order</li>
+                  <li>Avoiding Double Negatives</li><li>Using Do/Does/Did</li><li>Common Korean-English Mistakes</li><li>Natural Expressions</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="sec-num">3</span>
+              <div class="sec-name">Conversation Dialogues <span class="count">20 everyday situations</span></div>
+              <p class="sec-detail">Short, natural conversations with Korean support — at the office, at the airport, ordering food, making plans, meeting someone new. Built to be read aloud and used the same day. <a href="#dialogues" style="color:var(--rose); font-weight:800;">See all 20 and read one</a>.</p>
+            </li>
+            <li>
+              <span class="sec-num">4</span>
+              <div class="sec-name">Pronunciation Master Guide <span class="count">20 guides · with answer pages</span></div>
+              <div class="sec-detail">
+                <p style="margin:0;">Korean-specific coaching for the sounds Korean doesn't have, taught with tongue and lip positions and minimal pairs — word pairs that differ by one sound:</p>
+                <ul class="topics">
+                  <li>R vs L</li><li>F vs P</li><li>TH — soft (think)</li><li>TH — hard (this)</li><li>Vowel Length</li><li>Ending Sounds</li>
+                  <li>S vs SH</li><li>B vs V</li><li>Word Stress</li><li>Sentence Stress</li><li>Linking Sounds</li><li>English R</li>
+                  <li>Final /l/</li><li>The /æ/ Sound</li><li>/e/ vs /æ/ — Bed/Bad</li><li>/i/ vs /ɪ/ — Beat/Bit</li>
+                  <li>/u/ vs /ʊ/ — Pool/Pull</li><li>/ɔ/ vs /o/ — Cot/Coat</li><li>Korean Loanword Fixes</li><li>Daily Pronunciation Drills</li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <span class="sec-num">5</span>
+              <div class="sec-name">30-Day Study Planner <span class="count">English + Korean throughout</span></div>
+              <p class="sec-detail">A bilingual planner that turns the kit into a daily habit: a 30-day overview (your goal, your reason, your study time, your focus areas), weekly goals, a weekly checklist — 10 new words, 10 minutes of speaking, listening practice, grammar review, minimal pairs, 3 sentences — a daily study plan page, a vocabulary log, speaking and listening practice pages, a four-week habit tracker, a weekly review, and a monthly reflection that ends with new goals and a congratulations page.</p>
+            </li>
+            <li>
+              <span class="sec-num">6</span>
+              <div class="sec-name">Worksheets &amp; Practice Pages</div>
+              <p class="sec-detail">Practice is woven through the whole kit rather than saved for the end: fill-in practice on every grammar and pronunciation page with the answers right after it, plus dedicated planner practice pages — pick a grammar point and use it, write 3 sentences with today's vocabulary, answer questions about a short text, and drill 5 minimal pairs.</p>
+            </li>
+            <li>
+              <span class="sec-num">7</span>
+              <div class="sec-name">Bonus Packs <span class="count">The fun, practical extras</span></div>
+              <div class="sec-detail">
+                <p style="margin:0;">High-value add-ons that keep English going outside the “study” pages:</p>
+                <ul class="topics">
+                  <li>AI Practice Prompts — copy into ChatGPT / Copilot</li><li>Slang &amp; Modern Expressions</li><li>Native Expressions Koreans Don't Learn</li>
+                  <li>Common Korean Mistakes — fixed</li><li>Daily English Routine</li><li>7-Day Challenge</li><li>30-Day Challenge</li>
+                  <li>Mini Writing Prompts</li><li>Conversation Starters</li><li>Pronunciation Quick Fixes</li><li>Motivation Pack</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- VOCABULARY EXPLORER -->
+      <section class="section" id="vocabulary" aria-labelledby="vocab-h">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Section 1 · Try it yourself</p>
+            <h2 id="vocab-h">All 50 vocabulary cards, by theme</h2>
+            <p>Pick a theme, then tap any card to flip it — the Korean meaning, example sentence, and pronunciation are on the back, exactly as printed in the kit. Press Listen to hear the word and sentence out loud.</p>
+          </div>
+          <div class="theme-tabs" id="themeTabs" role="group" aria-label="Choose a vocabulary theme"></div>
+          <div class="cards" id="cards"></div>
+        </div>
+      </section>
+
+      <!-- LOOK INSIDE -->
+      <section class="section" id="look-inside" aria-labelledby="look-h">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Look inside</p>
+            <h2 id="look-h">Real pages from across the kit</h2>
+            <p>Actual pages from the full 194-page kit — tap a thumbnail to turn the page.</p>
+          </div>
+          <div class="viewer">
+            <div class="viewer-stage">
+              <img class="viewer-img" id="viewerImg" src="assets/cover.jpg" alt="" />
+              <div>
+                <p class="viewer-caption" id="viewerCaption"></p>
+                <p class="viewer-note" id="viewerNote"></p>
+                <div class="viewer-nav">
+                  <button class="nav-btn" id="prevBtn" type="button">← Previous page</button>
+                  <button class="nav-btn" id="nextBtn" type="button">Next page →</button>
+                </div>
+              </div>
+            </div>
+            <div class="thumbs" id="thumbs" role="group" aria-label="Choose a sample page"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIALOGUES -->
+      <section class="section" id="dialogues" aria-labelledby="dlg-h">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Section 3 · Conversation Dialogues</p>
+            <h2 id="dlg-h">20 conversations for real life</h2>
+            <p>Short enough to practice in a few minutes, real enough to use the same day. Here is one in full, exactly as it appears in the kit:</p>
+          </div>
+          <div class="dialogue-grid">
+            <div class="chat" aria-label="Sample dialogue: At the Airport" id="airportChat">
+              <h3>At the Airport — read &amp; listen</h3>
+              <div class="bubble a" data-line="Where is Gate 12?"><span class="who">A</span>Where is Gate 12?</div>
+              <div class="bubble b" data-line="It's straight ahead and to the left."><span class="who">B</span>It's straight ahead and to the left.</div>
+              <div class="bubble a" data-line="Thank you!"><span class="who">A</span>Thank you!</div>
+              <div class="bubble b" data-line="You're welcome."><span class="who">B</span>You're welcome.</div>
+              <span class="olivia-audio-label">🎙 In Olivia's own voice — At the Airport · 0:13</span>
+              <audio class="olivia-audio" controls preload="metadata" src="assets/dialogue-airport.mp3" aria-label="Olivia reading the At the Airport dialogue in her own voice"></audio>
+              <div class="play-row">
+                <button class="play-btn secondary" type="button" id="playDialogueBtn">▶ Or play it in two computer voices</button>
+                <button class="play-btn ghost" type="button" id="stopDialogueBtn">Stop</button>
+              </div>
+              <p style="color:var(--muted); font-size:0.9rem; margin:6px 0 0;">Olivia recorded this dialogue herself — press play on her version first, listen, then say each line out loud in the pauses.</p>
+            </div>
+            <div>
+              <h3 style="margin-bottom:12px;">All 20 dialogues in the kit</h3>
+              <ol class="dialogue-titles">
+                <li>At the Office</li><li>Asking for Help</li><li>Ordering Food</li><li>At a Restaurant</li>
+                <li>At the Airport</li><li>Asking for Directions</li><li>Talking About Weather</li><li>At School</li>
+                <li>Studying Together</li><li>Shopping</li><li>Trying On Clothes</li><li>Social Media</li>
+                <li>Making Plans</li><li>Feeling Tired</li><li>Feeling Worried</li><li>Meeting Someone New</li>
+                <li>Talking About Hobbies</li><li>Talking About Travel</li><li>At the Cashier</li><li>Daily Conversation</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="chat" style="margin-top:22px;" aria-label="Dialogue: Meeting Someone New">
+            <h3>Meeting Someone New — in Olivia's voice</h3>
+            <div class="bubble a"><span class="who">A</span>Hi, nice to meet you!</div>
+            <div class="bubble b"><span class="who">B</span>Nice to meet you too!</div>
+            <div class="bubble a"><span class="who">A</span>Where are you from?</div>
+            <div class="bubble b"><span class="who">B</span>I'm from Korea.</div>
+            <span class="olivia-audio-label">🎙 Recorded by Olivia · 0:08</span>
+            <audio class="olivia-audio" controls preload="metadata" src="assets/dialogue-meeting.mp3" aria-label="Olivia reading the Meeting Someone New dialogue in her own voice"></audio>
+            <p style="color:var(--muted); font-size:0.9rem; margin:10px 0 0;">One of the first two dialogues Olivia recorded for the kit. Listen, then practice both parts out loud — greetings are the first thing learners actually use.</p>
+          </div>
+
+          <h3 style="margin:26px 0 4px;">All 20 dialogues — now in Olivia's voice</h3>
+          <p style="color:var(--muted); margin:0; max-width:44rem;">All 18 are recorded by Olivia herself, each with its lines written out to read along. Press play, then say both parts out loud.</p>
+          <div class="batch-grid">
+            <div class="dlg-card">
+              <h3>At the Office · 0:14</h3>
+              <div class="bubble a"><span class="who">A</span>Hi, do you have a minute?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, what's up?</div>
+              <div class="bubble a"><span class="who">A</span>Can you help me with this report?</div>
+              <div class="bubble b"><span class="who">B</span>Sure, let's do it together.</div>
+              <audio controls preload="metadata" src="assets/dialogue-office.mp3" aria-label="Olivia reading the At the Office dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Asking for Help · 0:11</h3>
+              <div class="bubble a"><span class="who">A</span>Can you help me?</div>
+              <div class="bubble b"><span class="who">B</span>Of course. What do you need?</div>
+              <div class="bubble a"><span class="who">A</span>I don't understand this part.</div>
+              <div class="bubble b"><span class="who">B</span>No problem, I'll explain it.</div>
+              <audio controls preload="metadata" src="assets/dialogue-help.mp3" aria-label="Olivia reading the Asking for Help dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Ordering Food · 0:13</h3>
+              <div class="bubble a"><span class="who">A</span>Hi, I'd like to order a salad.</div>
+              <div class="bubble b"><span class="who">B</span>Sure. Anything else?</div>
+              <div class="bubble a"><span class="who">A</span>Yes, one iced tea, please.</div>
+              <div class="bubble b"><span class="who">B</span>Okay, your total is 9 dollars.</div>
+              <audio controls preload="metadata" src="assets/dialogue-ordering.mp3" aria-label="Olivia reading the Ordering Food dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>At a Restaurant · 0:13</h3>
+              <div class="bubble a"><span class="who">A</span>Excuse me, can I get the menu?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, here you go.</div>
+              <div class="bubble a"><span class="who">A</span>Thank you. What do you recommend?</div>
+              <div class="bubble b"><span class="who">B</span>The soup is very popular.</div>
+              <audio controls preload="metadata" src="assets/dialogue-restaurant.mp3" aria-label="Olivia reading the At a Restaurant dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Asking for Directions · 0:12</h3>
+              <div class="bubble a"><span class="who">A</span>Excuse me, how do I get to the station?</div>
+              <div class="bubble b"><span class="who">B</span>Go straight and turn right.</div>
+              <div class="bubble a"><span class="who">A</span>Is it far?</div>
+              <div class="bubble b"><span class="who">B</span>No, about five minutes.</div>
+              <audio controls preload="metadata" src="assets/dialogue-directions.mp3" aria-label="Olivia reading the Asking for Directions dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Talking About Weather · 0:10</h3>
+              <div class="bubble a"><span class="who">A</span>It's so sunny today!</div>
+              <div class="bubble b"><span class="who">B</span>Yes, it feels like summer.</div>
+              <div class="bubble a"><span class="who">A</span>Do you like warm weather?</div>
+              <div class="bubble b"><span class="who">B</span>I love it.</div>
+              <audio controls preload="metadata" src="assets/dialogue-weather.mp3" aria-label="Olivia reading the Talking About Weather dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>At School · 0:10</h3>
+              <div class="bubble a"><span class="who">A</span>Did you finish your homework?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, I did it last night.</div>
+              <div class="bubble a"><span class="who">A</span>Good job!</div>
+              <div class="bubble b"><span class="who">B</span>Thanks. Did you finish yours?</div>
+              <audio controls preload="metadata" src="assets/dialogue-school.mp3" aria-label="Olivia reading the At School dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Studying Together · 0:11</h3>
+              <div class="bubble a"><span class="who">A</span>Do you want to study together?</div>
+              <div class="bubble b"><span class="who">B</span>Sure, what time?</div>
+              <div class="bubble a"><span class="who">A</span>Let's meet at 3 PM.</div>
+              <div class="bubble b"><span class="who">B</span>Sounds good.</div>
+              <audio controls preload="metadata" src="assets/dialogue-studying.mp3" aria-label="Olivia reading the Studying Together dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Shopping · 0:11</h3>
+              <div class="bubble a"><span class="who">A</span>Do you have this in size M?</div>
+              <div class="bubble b"><span class="who">B</span>Let me check.</div>
+              <div class="bubble a"><span class="who">A</span>Thank you.</div>
+              <div class="bubble b"><span class="who">B</span>Yes, here it is.</div>
+              <audio controls preload="metadata" src="assets/dialogue-shopping.mp3" aria-label="Olivia reading the Shopping dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Trying On Clothes · 0:11</h3>
+              <div class="bubble a"><span class="who">A</span>Can I try this on?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, the fitting room is over there.</div>
+              <div class="bubble a"><span class="who">A</span>Thank you.</div>
+              <div class="bubble b"><span class="who">B</span>Let me know if you need another size.</div>
+              <audio controls preload="metadata" src="assets/dialogue-trying-on.mp3" aria-label="Olivia reading the Trying On Clothes dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Social Media · 0:09</h3>
+              <div class="bubble a"><span class="who">A</span>I posted a new photo today.</div>
+              <div class="bubble b"><span class="who">B</span>Really? I'll check it!</div>
+              <div class="bubble a"><span class="who">A</span>Leave a comment!</div>
+              <div class="bubble b"><span class="who">B</span>Of course.</div>
+              <audio controls preload="metadata" src="assets/dialogue-social-media.mp3" aria-label="Olivia reading the Social Media dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Making Plans · 0:09</h3>
+              <div class="bubble a"><span class="who">A</span>Are you free this weekend?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, I am.</div>
+              <div class="bubble a"><span class="who">A</span>Let's go to the beach.</div>
+              <div class="bubble b"><span class="who">B</span>Great idea!</div>
+              <audio controls preload="metadata" src="assets/dialogue-plans.mp3" aria-label="Olivia reading the Making Plans dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Feeling Tired · 0:09</h3>
+              <div class="bubble a"><span class="who">A</span>You look tired.</div>
+              <div class="bubble b"><span class="who">B</span>Yeah, I didn't sleep well.</div>
+              <div class="bubble a"><span class="who">A</span>You should rest.</div>
+              <div class="bubble b"><span class="who">B</span>I will. Thanks.</div>
+              <audio controls preload="metadata" src="assets/dialogue-tired.mp3" aria-label="Olivia reading the Feeling Tired dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Feeling Worried · 0:08</h3>
+              <div class="bubble a"><span class="who">A</span>You seem worried.</div>
+              <div class="bubble b"><span class="who">B</span>I have a test tomorrow.</div>
+              <div class="bubble a"><span class="who">A</span>You'll do great.</div>
+              <div class="bubble b"><span class="who">B</span>I hope so.</div>
+              <audio controls preload="metadata" src="assets/dialogue-worried.mp3" aria-label="Olivia reading the Feeling Worried dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Talking About Hobbies · 0:10</h3>
+              <div class="bubble a"><span class="who">A</span>What's your hobby?</div>
+              <div class="bubble b"><span class="who">B</span>I love cooking.</div>
+              <div class="bubble a"><span class="who">A</span>Really? Me too!</div>
+              <div class="bubble b"><span class="who">B</span>Let's cook together sometime.</div>
+              <audio controls preload="metadata" src="assets/dialogue-hobbies.mp3" aria-label="Olivia reading the Talking About Hobbies dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Talking About Travel · 0:09</h3>
+              <div class="bubble a"><span class="who">A</span>Do you like to travel?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, I love it.</div>
+              <div class="bubble a"><span class="who">A</span>Where do you want to go next?</div>
+              <div class="bubble b"><span class="who">B</span>I want to visit Japan.</div>
+              <audio controls preload="metadata" src="assets/dialogue-travel.mp3" aria-label="Olivia reading the Talking About Travel dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>At the Cashier · 0:09</h3>
+              <div class="bubble a"><span class="who">A</span>Can I pay with card?</div>
+              <div class="bubble b"><span class="who">B</span>Yes, please insert your card.</div>
+              <div class="bubble a"><span class="who">A</span>Thank you.</div>
+              <div class="bubble b"><span class="who">B</span>Have a nice day!</div>
+              <audio controls preload="metadata" src="assets/dialogue-cashier.mp3" aria-label="Olivia reading the At the Cashier dialogue"></audio>
+            </div>
+            <div class="dlg-card">
+              <h3>Daily Conversation · 0:11</h3>
+              <div class="bubble a"><span class="who">A</span>How was your day?</div>
+              <div class="bubble b"><span class="who">B</span>It was good. How about you?</div>
+              <div class="bubble a"><span class="who">A</span>Pretty good. I'm tired though.</div>
+              <div class="bubble b"><span class="who">B</span>Same here.</div>
+              <audio controls preload="metadata" src="assets/dialogue-daily.mp3" aria-label="Olivia reading the Daily Conversation dialogue"></audio>
+            </div>
+          </div>
+
+          <div class="expressions">
+            <h3>From the kit: say it the way natives actually say it</h3>
+            <p class="sub">Some Korean expressions don't translate word for word — and some English borrowed into Korean has drifted. The kit fixes both, kindly:</p>
+            <div class="expr"><span class="from">“화이팅!”</span><span class="arrow">→</span><span class="to">“You got this!”</span></div>
+            <div class="expr"><span class="from">“수고했어요”</span><span class="arrow">→</span><span class="to">“Great job today.”</span></div>
+            <div class="expr wrong"><span class="from">“Hand phone”</span><span class="arrow">→</span><span class="to">“Cell phone”</span></div>
+            <div class="expr wrong"><span class="from">“I'm interesting”</span><span class="arrow">→</span><span class="to">“I'm interested”</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTEN & WATCH — STARTER KIT AUDIO + VIDEO -->
+      <section class="section" id="listen-watch" aria-labelledby="listen-h">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">New · Audio &amp; Video for the Starter Kit</p>
+            <h2 id="listen-h">Listen &amp; watch — don't just read it, hear it</h2>
+            <p>The kit was always made to be spoken out loud — and here it plays in <strong>Olivia's own voice</strong>: her recorded welcome at the top of this page, <strong>all 20 dialogues</strong>, and eleven pronunciation drills below. These are her real recordings — press play and practice along.</p>
+          </div>
+
+          <div class="media-grid">
+            <!-- Audio player -->
+            <div class="player-card">
+              <h3>🎧 Dialogue audio — in Olivia's voice</h3>
+              <p class="sub">All 20 dialogues are now recorded by Olivia herself — <strong>At the Airport</strong> and <strong>Meeting Someone New</strong> have their own boxes in the dialogues section above, and the other 18 are there too, each with its lines written out to read along.</p>
+
+              <h3 style="margin-top:20px; font-size:1.05rem;">Pronunciation drills — Olivia's voice, press play</h3>
+              <div class="drill-list">
+                <div class="drill"><div><strong>TH — think &amp; this · 0:43</strong><span>This clip covers both of the kit's TH pages in one recording — soft TH and hard TH — so it says more than the single printed TH page shows. Everything in it, in order: Think · Thank — This · That · They. Minimal pairs: Think/Sink · Thank/Tank · This/Dis · They/Day. Practice sentences: “I think it's good.” · “This is my friend.”</span></div><audio controls preload="metadata" src="assets/drill-th.mp3" aria-label="Olivia's TH pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>R vs L · 0:33</strong><span>Light/Right · Long/Wrong · Glass/Grass, then “I have a light.”</span></div><audio controls preload="metadata" src="assets/drill-r-l.mp3" aria-label="Olivia's R versus L pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>F vs P · 0:28</strong><span>Fan/Pan · Fine/Pine · Coffee/Copy, then “I want coffee.”</span></div><audio controls preload="metadata" src="assets/drill-f-p.mp3" aria-label="Olivia's F versus P pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>Vowel Length · 0:28</strong><span>Ship/Sheep · Sit/Seat · Full/Fool, then “I saw a ship.”</span></div><audio controls preload="metadata" src="assets/drill-vowel-length.mp3" aria-label="Olivia's vowel length pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>Daily Drills — all three lines · 0:55</strong><span>Think–Thank–That–They · Ship–Sheep–Seat–Sit · Light–Right–Long–Wrong</span></div><audio controls preload="metadata" src="assets/drill-daily.mp3" aria-label="Olivia's daily pronunciation drills, all three lines joined into one clip"></audio></div>
+              </div>
+
+              <h3 style="margin-top:22px; font-size:1.05rem;">More pronunciation — also in Olivia's voice</h3>
+              <p class="sub" style="margin-bottom:4px;">Six more topics from the Pronunciation Master Guide, recorded by Olivia:</p>
+              <div class="drill-list">
+                <div class="drill"><div><strong>B vs V · 0:17</strong><span>Ban/Van · Berry/Very — lips together for B, teeth on lip for V.</span></div><audio controls preload="metadata" src="assets/drill-b-v.mp3" aria-label="Olivia's B versus V pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>Ending Sounds · 0:23</strong><span>Cap/Cab · Back/Bag · Seat/Seed — the last sound changes the word.</span></div><audio controls preload="metadata" src="assets/drill-ending.mp3" aria-label="Olivia's ending sounds pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>Word Stress · 0:13</strong><span>TAble · MOther · aBOUT — one part of each word is strong.</span></div><audio controls preload="metadata" src="assets/drill-word-stress.mp3" aria-label="Olivia's word stress pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>Sentence Stress · 0:29</strong><span>The important words stand out — hear which words Olivia makes strong.</span></div><audio controls preload="metadata" src="assets/drill-sentence-stress.mp3" aria-label="Olivia's sentence stress pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>Linking Sounds · 0:31</strong><span>wanna · gonna · gotta — how native speakers join words together.</span></div><audio controls preload="metadata" src="assets/drill-linking.mp3" aria-label="Olivia's linking sounds pronunciation drill"></audio></div>
+                <div class="drill"><div><strong>English R + Final L · 0:11</strong><span>The English R sound, and a clear L at the end of a word.</span></div><audio controls preload="metadata" src="assets/drill-r-final-l.mp3" aria-label="Olivia's English R and final L pronunciation drill"></audio></div>
+              </div>
+
+              <p style="color:var(--muted); font-size:0.92rem; margin-top:16px;">💡 <strong>How to practice:</strong> Listen once → listen and repeat → cover the text and say it from memory. The vocabulary cards above work the same way — every card has its own Listen button on the back.</p>
+            </div>
+
+            <!-- In the printed & PDF kit -->
+            <div class="player-card">
+              <h3>📖 In the printed &amp; PDF kit — scan to listen</h3>
+              <p class="sub">The same recordings live in two places: as players on this page, and as QR codes printed in the book.</p>
+              <div class="qr-box">
+                <div class="qr-fake">SCAN<br>TO<br>LISTEN</div>
+                <div>
+                  <strong style="font-family:'Baloo 2',sans-serif;">In the printed / PDF kit</strong>
+                  <p style="color:var(--muted); margin:4px 0 0; font-size:0.94rem;">Each dialogue page gets its own QR. Learner reads → scans → hears Olivia → repeats. On this page, they just press Play — no phone needed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PATTERN -->
+      <section class="section" aria-labelledby="pattern-h">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">How the kit teaches</p>
+            <h2 id="pattern-h">Every teaching page follows the same kind pattern</h2>
+            <p>No long grammar lectures. Each page names the real reason something is hard, fixes just that, then lets the learner try it right away.</p>
+          </div>
+          <div class="pattern">
+            <div class="step">
+              <p class="step-num">Step 1 · Why</p>
+              <h3>Why you struggle</h3>
+              <p>“Korean has no articles.” “Korean has no ‘th’ sound.” The page says the honest reason first — so learners stop blaming themselves and start fixing the actual problem.</p>
+            </div>
+            <div class="step">
+              <p class="step-num">Step 2 · Fix</p>
+              <h3>One simple fix</h3>
+              <p>“Use <em>a/an</em> for one, non-specific thing. Use <em>the</em> for specific things already known.” One clear move, shown simply — never a page of rules.</p>
+            </div>
+            <div class="step">
+              <p class="step-num">Step 3 · Practice</p>
+              <h3>Try it now — answers included</h3>
+              <p>A short practice sits on the same page — “I bought ___ book. ___ sun is bright today.” — with the answers on the next page, so learners can check themselves honestly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EASY ENGLISH WORLD / NINA & PIP -->
+      <section class="world" id="nina-pip" aria-labelledby="world-h">
+        <div class="wrap" style="padding:0;">
+          <p class="kicker">Children's series · Watch &amp; Listen</p>
+          <h2 id="world-h">Nina &amp; Pip — Easy English World for little learners</h2>
+          <p style="color:var(--muted); max-width: 46rem;">
+            The Starter Kit's little sibling: a children's video + audio series for ages 3–7 learning English
+            as an additional language. Nina — curious, friendly, and happy to learn alongside the viewer —
+            and her tiny bird Pip, who confidently gives the wrong answer so children get the joy of
+            correcting him. Every short episode teaches one small thing and invites the child to join in.
+            Press <strong>Watch</strong> for video, or <strong>Listen</strong> for audio-only — perfect for car rides and bedtime replay.
+          </p>
+          <ul class="flow" aria-label="The learning pattern in every episode">
+            <li>See</li><li class="sep">→</li><li>Hear</li><li class="sep">→</li><li>Guess</li><li class="sep">→</li>
+            <li>Pause</li><li class="sep">→</li><li>Say</li><li class="sep">→</li><li>Repeat</li><li class="sep">→</li><li>Celebrate</li>
+          </ul>
+
+          <div class="world-grid">
+            <div>
+              <img class="still" src="assets/nina-pip.jpg" alt="Nina, a young girl with dark hair in two bunches with yellow bows, wearing a coral hoodie and yellow overalls, waving hello, with her small yellow bird Pip beside her." />
+              <div style="background:var(--surface); border:1.5px solid var(--line); border-radius:14px; padding:16px; margin-top:16px;">
+                <strong style="font-family:'Baloo 2',sans-serif;">For grown-ups</strong>
+                <p style="color:var(--muted); margin:6px 0 0; font-size:0.94rem;">Each episode is built for co-watching: pause when Pip guesses wrong and let your child shout the right answer first. The Listen buttons read the key words slowly so children can echo them — no screen needed.</p>
+              </div>
+            </div>
+            <div>
+              <video id="ninaPlayer" controls preload="metadata" src="assets/silly-pip-apple.mp4" aria-label="Silly Pip! Apple — a short Easy English World episode"></video>
+              <p class="video-cap"><strong>Now playing: Silly Pip! — Apple</strong> (33 seconds). Pip is sure the apple is a banana. Real pauses are built in so a child watching can answer out loud before Nina does.</p>
+              <div class="play-row">
+                <button class="play-btn" type="button" data-speak="Apple! Is it an apple or a banana? Apple! Great job!">🎧 Listen — Apple words</button>
+                <button class="play-btn secondary" type="button" onclick="document.getElementById('ninaPlayer').play(); document.getElementById('ninaPlayer').scrollIntoView({behavior:'smooth', block:'center'});">▶ Play video again</button>
+              </div>
+              <p style="color:var(--muted); font-size:0.9rem;">Video lives right on this page — no need to leave for YouTube.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:28px;">All episodes — watch &amp; listen library</h3>
+          <p style="color:var(--muted); margin:6px 0 0; max-width:44rem;">One full video is playable here today. Every episode also has a Listen button for its key words, so the whole set works as audio even before the next videos are added.</p>
+          <div class="episode-grid">
+            <article class="ep-card featured">
+              <span class="ep-tag">▶ Video playable now · 0:33</span>
+              <h4>Silly Pip! — Apple</h4>
+              <p>Apple &amp; banana. Pip's confident mistake gives children the best job — correcting him out loud.</p>
+              <div class="ep-actions">
+                <button class="ep-watch" type="button" onclick="var v=document.getElementById('ninaPlayer'); v.scrollIntoView({behavior:'smooth', block:'center'}); v.play();">Watch video</button>
+                <button class="ep-listen" type="button" data-speak="Apple. Banana. Apple!">Listen — words</button>
+              </div>
+            </article>
+            <article class="ep-card">
+              <span class="ep-tag">Colors · Listen</span>
+              <h4>Find It! — Can You Find Red?</h4>
+              <p>The color red. A hide-and-seek hunt that teaches looking, listening, and shouting “Red!”</p>
+              <div class="ep-actions"><button class="ep-listen" type="button" data-speak="Red! Can you find red? Red!">Listen — words</button></div>
+            </article>
+            <article class="ep-card">
+              <span class="ep-tag">Animals · Listen</span>
+              <h4>Silly Pip! — Cat or Dog?</h4>
+              <p>Cat &amp; dog. Two favorite animals, one silly mix-up, lots of chances to answer.</p>
+              <div class="ep-actions"><button class="ep-listen" type="button" data-speak="Cat. Dog. Is it a cat or a dog? Cat!">Listen — words</button></div>
+            </article>
+            <article class="ep-card">
+              <span class="ep-tag">Guessing game · Listen</span>
+              <h4>What's Behind the Door? — Lion</h4>
+              <p>Guessing &amp; animal words. Sounds and clues behind the door — who is roaring?</p>
+              <div class="ep-actions"><button class="ep-listen" type="button" data-speak="What's behind the door? Lion! Roar!">Listen — words</button></div>
+            </article>
+            <article class="ep-card">
+              <span class="ep-tag">Colors · Listen</span>
+              <h4>Nina &amp; Pip's Color Hunt</h4>
+              <p>Colors all around the room. A gentle hunt children can play along with at home.</p>
+              <div class="ep-actions"><button class="ep-listen" type="button" data-speak="Red. Blue. Yellow. Green. Let's find colors!">Listen — words</button></div>
+            </article>
+            <article class="ep-card">
+              <span class="ep-tag">How it links</span>
+              <h4>Same system as the Starter Kit</h4>
+              <p>Watch, listen, and say it out loud — the same friendly system as the Starter Kit dialogues, in the player on this page and by QR code in the printable mini-book.</p>
+              <div class="ep-actions"><a class="ep-listen" href="#dialogues" style="display:inline-block;">Hear the Starter Kit dialogues ↑</a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT + NEXT -->
+      <section class="section" aria-labelledby="about-h">
+        <div class="wrap two-col">
+          <div class="panel">
+            <p class="kicker">About the maker · Who it's for</p>
+            <h2 id="about-h" style="font-size:1.6rem;">Made by a teacher, for real beginners</h2>
+            <p><strong>Level: Beginner (A1–A2)</strong> — made for <strong>Korean adults whose school English never became speaking confidence</strong>. You may have studied English for years in school and still freeze when you have to speak — this kit starts there, kindly, and builds real speaking step by step. A next-level follow-up series is planned for when you finish this one.</p>
+            <p>
+              <strong>Olivia Patterson</strong> is a native English speaker from California and a Trinity
+              CertTESOL-certified teacher who has taught English in Italy, Albania, and Guam, both in
+              classrooms and online. Her writing has been published in a college newspaper and online.
+              She built the Starter Kit in Canva while finishing her Bachelor's Degree in English from the
+              University of Guam, with a focus on linguistics and teaching English as a second language
+              (ESL) — the kit is the applied product for her Public Linguistics final project, presented at
+              the end-of-semester showcase, and the case study at the heart of her Technology and Language
+              paper.
+            </p>
+            <p>
+              Her rule for every page: simple, warm English that never makes a beginner feel small.
+              “You don't need to be perfect. You need to be consistent” — one of the kit's own
+              motivational pages — is the whole philosophy in one line.
+            </p>
+          </div>
+          <div class="panel">
+            <span class="idea-tag">Ideas she's exploring</span>
+            <h2 style="font-size:1.6rem;">Where the kit could go next</h2>
+            <ul>
+              <li><strong>A three-book print series</strong> — splitting the 194 pages into Book 1, 2, and 3 for print-on-demand, with a full-color digital edition, once the kit has been revised after finals.</li>
+              <li><strong>An Albanian edition</strong> — the same friendly system rebuilt for Albanian learners in Vlorë, with Albanian-specific dialogues (tourism and hospitality, everyday life), made with a native Albanian collaborator.</li>
+              <li><strong>Olivia's voice to match the pages — dialogues complete here</strong> — this page now plays her recorded welcome, all 20 dialogues and eleven pronunciation drills, plus the Nina &amp; Pip video; the next step is giving each dialogue in the Canva kit its QR code, pointing at these same recordings.</li>
+              <li><strong>A next-level follow-up series</strong> — this kit is Beginner (A1–A2); Olivia plans a follow-on level for learners who finish it and want to keep going.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT THE AUTHOR — the kit's author page -->
+      <section class="section" id="author" aria-labelledby="author-h">
+        <div class="wrap">
+          <article class="author-page">
+            <h2 id="author-h">About the Author</h2>
+            <img class="author-photo" src="assets/olivia-author-round.jpg" alt="Olivia Patterson, author of the Easy English Starter Kit, smiling at the camera in a pink knit sweater." width="196" height="196" />
+            <p class="author-greeting">Hi, I'm Olivia! 💛</p>
+            <p class="author-bio">
+              I'm a native English speaker from California and a Trinity CertTESOL-certified teacher.
+              I have a <strong>Bachelor's Degree in English from the University of Guam</strong>, with a focus on
+              linguistics and teaching English as a second language (ESL). I've taught English in Italy, Albania,
+              and Guam, both in classrooms and online. My writing has been published in a college newspaper and online.
+            </p>
+            <p class="author-bio">
+              I created this kit for Korean learners who have studied English for years but still don't feel
+              confident speaking. We start small, practice out loud, and build real confidence.
+            </p>
+            <p class="author-kr" lang="ko">
+              안녕하세요, 올리비아입니다! 저는 캘리포니아 출신의 영어 원어민 교사이며, Trinity CertTESOL 자격을 갖추고 있습니다. 괌 대학교에서 영어를 전공하고, 언어학과 제2언어로서의 영어 교육(ESL)을 공부했습니다. 이탈리아, 알바니아, 괌에서 교실 수업과 온라인 수업으로 영어를 가르쳐 왔고, 제 글은 대학 신문과 온라인에 실린 적이 있습니다. 오랫동안 영어를 공부했지만 아직 말하기에 자신이 없는 한국 학습자분들을 위해 이 키트를 만들었어요. 작게 시작해서, 소리 내어 연습하고, 진짜 자신감을 키워 봐요!
+            </p>
+            <hr class="author-rule" />
+            <ul class="author-contacts">
+              <li><span aria-hidden="true" style="display:inline-block; vertical-align:-3px; margin-right:4px;"><svg width="26" height="19" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.3v9.4L19.6 10 11.2 5.3z" fill="#fff"/></svg></span>YouTube: <a href="https://www.youtube.com/@OliviaTeachesEasyEnglish" target="_blank" rel="noopener"><span class="handle">@OliviaTeachesEasyEnglish</span></a> — Easy English Starter Kit with Liv</li>
+              <li>✉️ <a href="mailto:oliviateaches355@gmail.com">oliviateaches355@gmail.com</a></li>
+            </ul>
+            <div class="author-practice">
+              <h3>Keep practicing with me!</h3>
+              <p>Finished the kit? Keep going — start free, then book time with me when you are ready.</p>
+              <ul>
+                <li><strong>Start free · YouTube</strong><a href="https://www.youtube.com/@OliviaTeachesEasyEnglish" target="_blank" rel="noopener">@OliviaTeachesEasyEnglish</a> — free speaking practice on Easy English Starter Kit with Liv.</li>
+                <li><strong>Book a lesson · Calendly</strong><a href="https://calendly.com/oliviateaches" target="_blank" rel="noopener">calendly.com/oliviateaches</a> — book a free intro call or a private English lesson.</li>
+                <li><strong>Backup contact · Email</strong><a href="mailto:oliviateaches355@gmail.com">oliviateaches355@gmail.com</a> — if the links above do not work for you, email me here.</li>
+              </ul>
+            </div>
+            <p class="author-closing">Thank you for learning with me!</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <div class="wrap">
+          <p class="closing">“You got this!”</p>
+          <p>
+            This page presents the complete Easy English Starter Kit — all 194 pages, by Olivia Patterson.
+            The pages pictured are a selection from across the kit.
+            <a href="assets/starter-kit-sample-15-pages.pdf" download style="color:var(--rose); font-weight:800;">Download the 15-page sample (PDF)</a>
+            to see pages at full size.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // ---------- Sample page viewer (real pages from the full kit) ----------
+      var pages = [
+        { src: "assets/cover.jpg", label: "Cover",
+          caption: "The cover",
+          note: "“Speak natural American English with confidence” — a complete beginner-friendly system, designed for Korean learners.",
+          alt: "Cover of the Easy English Starter Kit over a soft pink and blue sky." },
+        { src: "assets/page-contents.jpg", label: "What's included",
+          caption: "What's included",
+          note: "The kit's own contents page opens the book: the Vocabulary Master Pack and the Grammar Cheat Sheets, with exactly what each one contains.",
+          alt: "Contents page listing Section 1, the Vocabulary Master Pack of 50 cards, and Section 2, the Korean Grammar Cheat Sheets." },
+        { src: "assets/page-relax.jpg", label: "Vocabulary card: Relax",
+          caption: "Vocabulary card · Daily Life: Relax",
+          note: "One word per card — the word, its Korean meaning (쉬다), a sentence you can use today, and how to pronounce it.",
+          alt: "Vocabulary card for the word Relax, showing a woman resting in a beach hammock at sunset, the Korean translation, the sentence 'I want to relax after work', and the pronunciation guide." },
+        { src: "assets/page-spicy.jpg", label: "Vocabulary card: Spicy",
+          caption: "Vocabulary card · Food & Restaurants: Spicy",
+          note: "From the Food & Restaurants theme: Spicy (매운) — “Korean food is often spicy.” Every one of the 50 cards follows this same friendly layout.",
+          alt: "Vocabulary card for the word Spicy from the Food and Restaurants theme, with its Korean translation and example sentence." },
+        { src: "assets/page-articles.jpg", label: "Grammar: Articles",
+          caption: "Grammar cheat sheet: Articles (a/an/the)",
+          note: "Why Koreans struggle: Korean has no articles. The fix fits in two lines — then practice: “I bought ___ book. ___ sun is bright today.” Answers are on the next page of the kit.",
+          alt: "Grammar cheat sheet for articles: why Koreans struggle because Korean has no articles, the fix for a/an and the, and fill-in practice sentences." },
+        { src: "assets/page-rvl.jpg", label: "Pronunciation: R vs L",
+          caption: "Pronunciation guide: R vs L",
+          note: "The Korean letter ㄹ covers both sounds, so the guide teaches tongue position — R curls back, L touches the top teeth — then minimal pairs: Light/Right, Long/Wrong, Glass/Grass.",
+          alt: "Pronunciation page for R versus L: the Korean issue, the tongue-position fix, minimal pairs Light/Right, Long/Wrong and Glass/Grass, and fill-in practice." },
+        { src: "assets/page-th.jpg", label: "Pronunciation: TH",
+          caption: "Pronunciation guide: TH",
+          note: "Korean has no “th” sound, so the fix is physical: tongue between teeth. Soft: think. Hard: this. Then practice — Think / This, Thank / That.",
+          alt: "Pronunciation page teaching the TH sound: why Koreans struggle, the fix of placing the tongue between the teeth, and practice pairs Think/This and Thank/That." },
+        { src: "assets/page-expressions.jpg", label: "Natural expressions",
+          caption: "Natural expressions Koreans mix up",
+          note: "Korean expressions don't match English idioms word for word — so the kit teaches what native speakers actually say: 화이팅 becomes “You got this!”",
+          alt: "Page teaching natural expressions: the Korean cheer hwiting becomes 'You got this!' and sugohaesseoyo becomes 'Great job today', with fill-in practice lines." },
+        { src: "assets/page-airport.jpg", label: "Dialogue: At the Airport",
+          caption: "Dialogue: At the Airport",
+          note: "One of the kit's 20 dialogues — four short lines a learner can genuinely use on their next trip, in big, friendly type made for reading aloud.",
+          alt: "Dialogue page titled At the Airport: 'Where is Gate 12?' 'It's straight ahead and to the left.' 'Thank you!' 'You're welcome.'" },
+        { src: "assets/page-planner.jpg", label: "Daily Study Plan",
+          caption: "The 30-Day Planner: Daily Study Plan",
+          note: "“Use this page daily.” A bilingual daily page — vocabulary, speaking, listening, grammar — that turns the whole kit into a gentle routine instead of a one-time read.",
+          alt: "Daily Study Plan page from the 30-day planner, with bilingual English and Korean fields for the date and for vocabulary, speaking, listening, and grammar." }
+      ];
+      var current = 0;
+      var img = document.getElementById("viewerImg");
+      var cap = document.getElementById("viewerCaption");
+      var note = document.getElementById("viewerNote");
+      var thumbsBox = document.getElementById("thumbs");
+      var thumbBtns = [];
+      pages.forEach(function (p, i) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "thumb";
+        b.setAttribute("aria-label", "Show page: " + p.label);
+        b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+        var t = document.createElement("img");
+        t.src = p.src; t.alt = ""; t.loading = "lazy";
+        b.appendChild(t);
+        b.addEventListener("click", function () { showPage(i); });
+        thumbsBox.appendChild(b);
+        thumbBtns.push(b);
+      });
+      function showPage(i) {
+        current = (i + pages.length) % pages.length;
+        img.src = pages[current].src;
+        img.alt = pages[current].alt;
+        cap.textContent = pages[current].caption;
+        note.textContent = pages[current].note;
+        thumbBtns.forEach(function (b, j) { b.setAttribute("aria-pressed", j === current ? "true" : "false"); });
+      }
+      document.getElementById("prevBtn").addEventListener("click", function () { showPage(current - 1); });
+      document.getElementById("nextBtn").addEventListener("click", function () { showPage(current + 1); });
+      showPage(0);
+
+      // ---------- Vocabulary explorer: all 50 real cards from Section 1 ----------
+      // Each card: [word, Korean, example sentence, pronunciation] — exactly as printed in the kit.
+      var themes = [
+        { name: "Daily Life", cards: [
+          ["Schedule", "일정", "My schedule is busy today.", "/ˈskedʒ.uːl/"],
+          ["Habit", "습관", "Drinking water in the morning is a healthy habit.", "/ˈhæb.ɪt/"],
+          ["Prepare", "준비하다", "I need to prepare for tomorrow.", "/prɪˈpeər/"],
+          ["Clean", "청소하다", "I clean my room every weekend.", "/kliːn/"],
+          ["Relax", "쉬다", "I want to relax after work.", "/rɪˈlæks/"],
+          ["Commute", "통근하다", "I commute by bus every morning.", "/kəˈmjuːt/"],
+          ["Exercise", "운동하다", "I exercise three times a week.", "/ˈek.sə.saɪz/"],
+          ["Sleep", "잠자다", "I try to sleep eight hours a night.", "/sliːp/"],
+          ["Finish", "끝내다", "I will finish this task soon.", "/ˈfɪn.ɪʃ/"],
+          ["Change", "바꾸다", "I want to change my routine.", "/tʃeɪndʒ/"]
+        ]},
+        { name: "Work & Office", cards: [
+          ["Improve", "향상시키다", "I want to improve my English.", "/ɪmˈpruːv/"],
+          ["Deadline", "마감일", "The deadline is tomorrow.", "/ˈded.laɪn/"],
+          ["Meeting", "회의", "We have a meeting at 3 PM.", "/ˈmiː.tɪŋ/"],
+          ["Project", "프로젝트", "This project is very important.", "/ˈprɑːdʒ.ekt/"],
+          ["Report", "보고서", "I need to finish my report today.", "/rɪˈpɔːrt/"]
+        ]},
+        { name: "Travel", cards: [
+          ["Ticket", "티켓", "I bought a ticket to Seoul.", "/ˈtɪk.ɪt/"],
+          ["Passport", "여권", "Don't forget your passport.", "/ˈpæs.pɔːrt/"],
+          ["Airport", "공항", "The airport is very crowded.", "/ˈer.pɔːrt/"],
+          ["Luggage", "짐", "My luggage is heavy.", "/ˈlʌɡ.ɪdʒ/"],
+          ["Direction", "방향", "Can you give me directions?", "/daɪˈrek.ʃən/"]
+        ]},
+        { name: "Food & Restaurants", cards: [
+          ["Menu", "메뉴", "The menu looks delicious.", "/ˈmen.juː/"],
+          ["Order", "주문하다", "I want to order a salad.", "/ˈɔːr.dər/"],
+          ["Delicious", "맛있는", "This cheese and fruit are delicious.", "/dɪˈlɪʃ.əs/"],
+          ["Spicy", "매운", "Korean food is often spicy.", "/ˈspaɪ.si/"],
+          ["Bill", "계산서", "Can I get the bill, please?", "/bɪl/"]
+        ]},
+        { name: "Feelings", cards: [
+          ["Happy", "행복한", "I feel happy today.", "/ˈhæp.i/"],
+          ["Tired", "피곤한", "I'm tired after work.", "/ˈtaɪərd/"],
+          ["Worried", "걱정되는", "I'm worried about the test.", "/ˈwɜːr.id/"],
+          ["Excited", "신난", "I'm excited for the weekend.", "/ɪkˈsaɪ.tɪd/"],
+          ["Confident", "자신 있는", "I feel confident speaking English.", "/ˈkɑːn.fɪ.dənt/"]
+        ]},
+        { name: "Social Media", cards: [
+          ["Post", "게시물", "I posted a new photo today.", "/poʊst/"],
+          ["Comment", "댓글", "I left a comment on your video.", "/ˈkɑːm.ent/"],
+          ["Share", "공유하다", "Please share this with your friends.", "/ʃer/"],
+          ["Follow", "팔로우하다", "I follow many creators.", "/ˈfɑːl.oʊ/"],
+          ["Message", "메시지", "I sent you a message.", "/ˈmes.ɪdʒ/"]
+        ]},
+        { name: "Shopping", cards: [
+          ["Price", "가격", "The price is too high.", "/praɪs/"],
+          ["Sale", "할인", "This store has a big sale.", "/seɪl/"],
+          ["Size", "사이즈", "What size do you need?", "/saɪz/"],
+          ["Try on", "입어보다", "I want to try on this shirt.", "/traɪ ɑːn/"],
+          ["Cashier", "계산원", "The cashier was very kind.", "/kæˈʃɪr/"]
+        ]},
+        { name: "School & Study", cards: [
+          ["Homework", "숙제", "I finished my homework.", "/ˈhoʊm.wɜːrk/"],
+          ["Test", "시험", "I have a test tomorrow.", "/test/"],
+          ["Practice", "연습하다", "I practice tennis every day.", "/ˈpræk.tɪs/"],
+          ["Lesson", "수업", "Today's English lesson was helpful.", "/ˈles.ən/"],
+          ["Teacher", "선생님", "My teacher is very kind.", "/ˈtiː.tʃər/"]
+        ]},
+        { name: "Weather", cards: [
+          ["Sunny", "맑은", "Today is sunny and warm.", "/ˈsʌn.i/"],
+          ["Rainy", "비 오는", "It's rainy outside.", "/ˈreɪ.ni/"],
+          ["Windy", "바람 부는", "It's windy today.", "/ˈwɪn.di/"]
+        ]},
+        { name: "Hobbies", cards: [
+          ["Travel", "여행하다", "I love to travel.", "/ˈtræv.əl/"],
+          ["Cooking", "요리하기", "Cooking is my favorite hobby.", "/ˈkʊk.ɪŋ/"]
+        ]}
+      ];
+      var tabsBox = document.getElementById("themeTabs");
+      var cardsBox = document.getElementById("cards");
+      var tabBtns = [];
+      function speak(text) {
+        if ("speechSynthesis" in window) {
+          window.speechSynthesis.cancel();
+          var u = new SpeechSynthesisUtterance(text);
+          u.lang = "en-US"; u.rate = 0.85;
+          window.speechSynthesis.speak(u);
+        }
+      }
+      function renderTheme(idx) {
+        tabBtns.forEach(function (b, j) { b.setAttribute("aria-pressed", j === idx ? "true" : "false"); });
+        cardsBox.innerHTML = "";
+        var theme = themes[idx];
+        theme.cards.forEach(function (c) {
+          var wrap = document.createElement("div");
+          wrap.className = "flash";
+          var inner = document.createElement("div");
+          inner.className = "flash-inner";
+          inner.setAttribute("role", "button");
+          inner.setAttribute("tabindex", "0");
+          inner.setAttribute("aria-pressed", "false");
+          inner.setAttribute("aria-label", "Flashcard for the word " + c[0] + ". Activate to flip the card.");
+          inner.innerHTML =
+            '<span class="face face-front"><span class="cat">' + theme.name + '</span>' +
+            '<span class="word">' + c[0] + '</span>' +
+            '<span class="hint">Tap to flip the card</span></span>' +
+            '<span class="face face-back"><span class="cat">Korean · ' + c[1] + '</span>' +
+            '<span class="kr">' + c[1] + '</span>' +
+            '<span class="example">“' + c[2] + '”</span>' +
+            '<span class="ipa">Pronunciation: ' + c[3] + '</span></span>';
+          var listen = document.createElement("button");
+          listen.type = "button";
+          listen.className = "listen";
+          listen.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Listen';
+          listen.setAttribute("aria-label", "Listen to the word " + c[0] + " and its example sentence");
+          listen.addEventListener("click", function (e) { e.stopPropagation(); speak(c[0] + ". " + c[2]); });
+          inner.querySelector(".face-back").appendChild(listen);
+          function flip() {
+            var on = wrap.classList.toggle("flipped");
+            inner.setAttribute("aria-pressed", on ? "true" : "false");
+          }
+          inner.addEventListener("click", flip);
+          inner.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); }
+          });
+          wrap.appendChild(inner);
+          cardsBox.appendChild(wrap);
+        });
+      }
+      themes.forEach(function (t, i) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "theme-tab";
+        b.textContent = t.name + " (" + t.cards.length + ")";
+        b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+        b.addEventListener("click", function () { renderTheme(i); });
+        tabsBox.appendChild(b);
+        tabBtns.push(b);
+      });
+      renderTheme(0);
+
+      // ---------- Listen & Watch: dialogue player + drill / episode Listen buttons ----------
+      document.querySelectorAll("[data-speak]").forEach(function (btn) {
+        btn.addEventListener("click", function () { speak(btn.getAttribute("data-speak")); });
+      });
+      var playBtn = document.getElementById("playDialogueBtn");
+      var stopBtn = document.getElementById("stopDialogueBtn");
+      var bubbles = Array.prototype.slice.call(document.querySelectorAll("#airportChat .bubble"));
+      function clearPlaying() { bubbles.forEach(function (b) { b.classList.remove("playing"); }); }
+      if (playBtn) {
+        playBtn.addEventListener("click", function () {
+          if (!("speechSynthesis" in window)) return;
+          window.speechSynthesis.cancel();
+          clearPlaying();
+          var idx = 0;
+          function next() {
+            if (idx >= bubbles.length) { clearPlaying(); return; }
+            var bubble = bubbles[idx];
+            var text = bubble.getAttribute("data-line") || bubble.textContent;
+            var isB = bubble.classList.contains("b");
+            bubble.classList.add("playing");
+            var u = new SpeechSynthesisUtterance(text);
+            u.lang = "en-US"; u.rate = 0.82; u.pitch = isB ? 1.15 : 0.95;
+            u.onend = function () { bubble.classList.remove("playing"); idx++; setTimeout(next, 450); };
+            u.onerror = function () { bubble.classList.remove("playing"); idx++; next(); };
+            window.speechSynthesis.speak(u);
+          }
+          next();
+        });
+      }
+      if (stopBtn) {
+        stopBtn.addEventListener("click", function () {
+          if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+          clearPlaying();
+        });
+      }
+    </script>
+  </body>
+</html>
